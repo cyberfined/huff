@@ -349,7 +349,7 @@ static inline int encode(int in_fd, int out_fd, symbol *alphabet) {
     if(in_len < 0)
         goto error;
 
-    if(bit_cnt > 0)
+    if(bit_cnt != 8)
         out_buf[out_len++] = byte;
 
     if(out_len > 0 && write(out_fd, out_buf, out_len) != out_len)
